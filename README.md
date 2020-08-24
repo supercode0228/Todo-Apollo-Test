@@ -1,4 +1,12 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Apollo Todo Test
+
+    The Two Functions:
+    - Add Function
+    - Edit Function
+    The Styles:
+    - Circle at the left
+    - Type a long line, text should be centered.
+    - The small X should be right-aligned.
 
 ## Available Scripts
 
