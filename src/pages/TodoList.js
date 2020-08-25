@@ -9,6 +9,7 @@ const TodoList = () => {
   const [value, setValue] = useState('')
   const [todoList, setTodoList] = useState([])
   const [selectedId, setSelectedId] = useState('')
+  const [completedId, setCompletedId] = useState([])
 
   const handleChange = (e) => {
     const { value } = e.target
@@ -52,6 +53,18 @@ const TodoList = () => {
     setSelectedId('')
   }
 
+  const handleCompleted = (id) => {
+    if (completedId.includes(id)) {
+      const index = completedId.indexOf(id)
+      completedId.splice(index, 1)
+      console.log(index)
+      console.log(completedId)
+      setCompletedId([...completedId])
+    } else {
+      setCompletedId([...completedId, id])
+    }
+  }
+
   return (
     <div className="todo-container">
       <div className="todo-container__header">
@@ -74,8 +87,14 @@ const TodoList = () => {
           >
             <TodoItem
               key={id}
-              {...{ id, value, selected: selectedId === id }}
+              {...{
+                id,
+                value,
+                selected: selectedId === id,
+                completed: completedId.includes(id),
+              }}
               onEdit={handleEdit}
+              onCompleted={handleCompleted}
             />
           </li>
         ))}

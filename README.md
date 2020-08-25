@@ -3,6 +3,7 @@
     The Two Functions:
     - Add Function
     - Edit Function
+    - Completed Task Function
     The Styles:
     - Circle at the left
     - Type a long line, text should be centered.
